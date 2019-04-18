@@ -5,12 +5,29 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
+import React from 'react'
+import PropTypes from 'prop-types'
+import { StaticQuery, graphql } from 'gatsby'
 
-import Header from "./header"
-import "./layout.css"
+import Header from './header'
+
+// import { createGlobalStyle } from 'styled-components'
+
+// import './layout.css'
+//import '../sass/layout.scss'
+import './bootstrap.min.css'
+
+// const GlobalStyle = createGlobalStyle`
+//   * {
+//     margin: 0;
+//     padding: 0;
+//   }
+//   body {
+//     background: #f1f1f1;
+//   }
+// `
+
+import Section from './sections/section'
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -25,6 +42,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
+        {/* <GlobalStyle /> */}
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
           style={{
